@@ -7,11 +7,12 @@ import com.luki.common.Common;
 import com.luki.pom.PageHome;
 import com.luki.util.AppLauncher;
 import io.appium.java_client.android.AndroidDriver;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
 	
 	@Test
-	public void filterPrice() throws Exception {
+	public void filterPriceHightoLow() throws Exception {
 		AndroidDriver driver = AppLauncher.startApp("emulator-5554");
 		Common.startLogin("standard_user", "secret_sauce", driver);
 		Thread.sleep(4000);
@@ -24,16 +25,12 @@ public class AppTest {
 		double price1 = Double.parseDouble(((WebElement)prices.get(0)).getText().substring(1));
 		double price2 = Double.parseDouble(((WebElement)prices.get(1)).getText().substring(1));
 		
-		if(price1 > price2) {
-			System.out.println(">>> bener");
-		} else {
-			System.out.println(">>> salah");
-		}
-
+		
+		assertTrue(price1 > price2, "item #1 price should be > than item #2");
 	}
 	
 	@Test
-	public void filterPrice2() throws Exception {
+	public void filterPriceLowToHigh() throws Exception {
 		AndroidDriver driver = AppLauncher.startApp("emulator-5554");
 		Common.startLogin("standard_user", "secret_sauce", driver);
 		Thread.sleep(4000);
@@ -46,11 +43,7 @@ public class AppTest {
 		double price1 = Double.parseDouble(((WebElement)prices.get(0)).getText().substring(1));
 		double price2 = Double.parseDouble(((WebElement)prices.get(1)).getText().substring(1));
 		
-		if(price1 < price2) {
-			System.out.println(">>> bener");
-		} else {
-			System.out.println(">>> salah");
-		}
+		assertTrue(price1 < price2, "item #1 price should be < than item #2");
 	}
 
 }
