@@ -15,6 +15,12 @@
 - Make sure emulator / real devices detected by ADB by issuing this command
 	- `adb devices`
 
+## Structure
+- `com.luki`: Test Cases
+- `com.luki.common`: Common methods that used across Test Cases
+- `com.luki.pom`: Page Object Models for each page tested
+- `com.luki.util`: Utilities used for the tests
+
 ## Running The Project 
 - Open this project folder on Eclipse 
 - Open up `AppTest.java`
