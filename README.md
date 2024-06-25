@@ -1,4 +1,6 @@
 # Android Tests
+Luki Ramadon - https://github.com/thekucays/flptst-appium
+
 
 ## IDE / Plugins Used
 - Eclipse 4.32.0
