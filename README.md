@@ -21,6 +21,19 @@
 - `com.luki.pom`: Page Object Models for each page tested
 - `com.luki.util`: Utilities used for the tests
 
+
+## Inspecting the app using Appium Inspector
+Use this capability set (also available in `inspectorCapabilities.json` file, make sure to adjust `appium:app` value first)
+```
+{
+  "appium:appium;deviceName": "emulator-5554",
+  "appium:automationName": "UiAutomator2",
+  "appium:app": "/Users/xxx/eclipse-workspace/projectName/apk/apptest.apk",
+  "platformName": "android",
+  "appium:appWaitActivity": "com.swaglabsmobileapp.MainActivity"
+}
+```
+
 ## Running The Project 
 - Open this project folder on Eclipse 
 - Open up `AppTest.java`
