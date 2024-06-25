@@ -1,19 +1,10 @@
 package com.luki;
 
-import java.time.Duration;
-import java.util.Collections;
 import java.util.List;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Pause;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.PointerInput.Kind;
-import org.openqa.selenium.interactions.Sequence;
-
 import com.luki.common.Common;
 import com.luki.pom.PageCartDetail;
 import com.luki.pom.PageCheckoutInformation;
@@ -35,7 +26,6 @@ public class AppTest {
 	
 	@AfterEach
     public void tearDown() {
-        // Quit the driver
         if (driver != null) {
             driver.quit();
         }
@@ -48,8 +38,7 @@ public class AppTest {
 		Thread.sleep(4000);
 		List<WebElement> prices = PageHome.listItemPrices(driver);
 		double price1 = Double.parseDouble(((WebElement)prices.get(0)).getText().substring(1));
-		double price2 = Double.parseDouble(((WebElement)prices.get(1)).getText().substring(1));
-		
+		double price2 = Double.parseDouble(((WebElement)prices.get(1)).getText().substring(1));	
 		
 		assertTrue(price1 > price2, "item #1 price should be > than item #2");
 	}
@@ -98,7 +87,7 @@ public class AppTest {
 		Common.scrollVertical(0.30, driver);
 		PageCheckoutOverview.buttonFinish(driver).click();
 		
-		// checkout page $4, complete screen
+		// checkout page #4, complete screen
 		boolean checkoutScreenPresent =  Common.checkElementExistsByAccessibilityID("test-CHECKOUT: COMPLETE!", driver);
 		boolean buttonBackPresent = Common.checkElementExistsByAccessibilityID("test-BACK HOME", driver);
 		
