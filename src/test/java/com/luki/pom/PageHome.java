@@ -13,6 +13,10 @@ public class PageHome {
 		return driver.findElement(AppiumBy.accessibilityId("test-Modal Selector Button"));
 	}
 	
+	public static WebElement iconCart(AndroidDriver driver) {
+		return driver.findElement(AppiumBy.accessibilityId("test-Cart"));
+	}
+	
 	public static WebElement textPriceLowToHigh(AndroidDriver driver) {
 		return driver.findElement(By.xpath("//*[@text='Price (low to high)']"));
 	}
@@ -23,6 +27,14 @@ public class PageHome {
 	
 	public static List<WebElement> listItemPrices(AndroidDriver driver) {
 		return driver.findElements(By.xpath("//*[@content-desc='test-Price']"));
+	}
+
+	public static List<WebElement> listItemTitle(AndroidDriver driver) {
+		return driver.findElements(By.xpath("//*[@content-desc='test-Item title']"));
+	}
+	
+	public static List<WebElement> listButtonAdd(AndroidDriver driver) {
+		return driver.findElements(By.xpath("//*[@content-desc='test-ADD TO CART']"));
 	}
 
 }
